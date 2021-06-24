@@ -38,6 +38,7 @@ class AuthenticateUserService {
             }
         );
 
+        return token;
     }
 }
 
