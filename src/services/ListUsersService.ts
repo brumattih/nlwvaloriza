@@ -1,5 +1,6 @@
 import { getCustomRepository } from "typeorm";
 import { UserRepositories } from "../repositories/UserRepositories";
+import { classToPlain } from "class-transformer";
 
 class ListUsersService {
     async execute() {
@@ -7,7 +8,7 @@ class ListUsersService {
 
         const users = await userRepositories.find();
 
-        return users;
+        return classToPlain(users);
     }
 }
 
